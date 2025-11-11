@@ -22,6 +22,7 @@ h1, h2, h3 {
   gap: 10px;
 }
 
+/* Client buttons */
 button.launch-btn {
   background-color: #444;
   color: #fff;
@@ -40,6 +41,21 @@ button.launch-btn:hover {
   background-color: #666;
 }
 
+/* Texture pack buttons */
+button.download-btn {
+  background-color: #888;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button.download-btn:hover {
+  background-color: #aaa;
+}
+
+/* Collapsible updates section */
 .collapsible-content {
   display: flex;
   overflow-x: auto;
@@ -56,14 +72,6 @@ button.launch-btn:hover {
 .collapsible-content::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 4px;
-}
-
-#client-frame {
-  width: 100%;
-  height: 600px;
-  border: 2px solid #555;
-  margin-top: 20px;
-  display: none;
 }
 
 .toggle-btn {
