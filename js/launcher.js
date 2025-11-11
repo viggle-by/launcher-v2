@@ -37,49 +37,18 @@ toggleBtn.addEventListener("click", function() {
   }
 });
 
-var frame = document.getElementById("client-frame");
-
-// Load last selected client or texture
-var lastClient = localStorage.getItem("lastClient");
-if (lastClient && CLIENTS[lastClient]) loadClient(lastClient);
-
-var lastTexture = localStorage.getItem("lastTexture");
-if (lastTexture && TEXTURES[lastTexture]) loadTexture(lastTexture);
-
 document.body.addEventListener("click", function(e) {
   var key = e.target.dataset.client;
   if (!key) return;
 
   if (TEXTURES[key]) {
-    loadTexture(key);
+    var link = document.createElement("a");
+    link.href = TEXTURES[key];
+    link.download = "";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   } else if (CLIENTS[key]) {
-    loadClient(key);
+    window.open(CLIENTS[key], "_blank");
   }
 });
-
-function loadClient(clientKey) {
-  var url = CLIENTS[clientKey];
-  if (!url) { alert("Client not found!"); return; }
-  frame.src = url;
-  frame.style.display = "block";
-  localStorage.setItem("lastClient", clientKey);
-  updateActiveButton(clientKey, "launch-btn");
-}
-
-function loadTexture(textureKey) {
-  var url = TEXTURES[textureKey];
-  if (!url) { alert("Texture pack not found!"); return; }
-  frame.src = url;
-  frame.style.display = "block";
-  localStorage.setItem("lastTexture", textureKey);
-  updateActiveButton(textureKey, "download-btn");
-}
-
-function updateActiveButton(key, btnClass) {
-  var buttons = document.querySelectorAll("." + btnClass);
-  for (var i=0; i<buttons.length; i++) {
-    buttons[i].classList.remove("active");
-  }
-  var activeBtn = document.querySelector('[data-client="'+key+'"]');
-  if (activeBtn) activeBtn.classList.add("active");
-}
