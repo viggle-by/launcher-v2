@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minecraft Web Launcher</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="launcher">
+  <h1>Minecraft Web Launcher</h1>
+  <p>Select a client to play:</p>
+
+  <h3>Eaglercraft JS/WASM</h3>
+  <div class="button-group">
+    <button class="launch-btn" data-client="eaglercraft-1.12.2-js">Eaglercraft 1.12.2 JS</button>
+    <button class="launch-btn" data-client="eaglercraft-1.12.2-wasm">Eaglercraft 1.12.2 WASM</button>
+    <button class="launch-btn" data-client="eaglercraft-1.8.8-js">Eaglercraft 1.8.8 JS</button>
+    <button class="launch-btn" data-client="eaglercraft-1.8.8-wasm">Eaglercraft 1.8.8 WASM</button>
+    <button class="launch-btn" data-client="eaglercraft-1.5.2-js">Eaglercraft 1.5.2 JS</button>
+  </div>
+
+  <h3>Eaglercraft 1.8.8 Updates</h3>
+  <button id="toggle-updates" class="toggle-btn">Toggle Updates</button>
+  <div id="updates" class="collapsible-content" style="display:none;">
+    <button class="launch-btn" data-client="eaglercraft-1.8.8-u54">u54</button>
+    <button class="launch-btn" data-client="eaglercraft-1.8.8-u54-wasm">u54 WASM-GC</button>
+    <button class="launch-btn" data-client="pixelclient-v3">PixelClient WASM-GC</button>
+    <button class="launch-btn" data-client="eaglercraft-1.8.8-u52">u52</button>
+    <button class="launch-btn" data-client="eaglercraft-1.8.8-u41">u41</button>
+    <button class="launch-btn" data-client="eaglercraft-1.8.8-u31">u31</button>
+  </div>
+
+  <h3>Astra Client</h3>
+  <div class="button-group">
+    <button class="launch-btn" data-client="astra-1.6">Astra 1.6</button>
+    <button class="launch-btn" data-client="astra-1.5">Astra 1.5</button>
+    <button class="launch-btn" data-client="astra-1.4">Astra 1.4</button>
+    <button class="launch-btn" data-client="astra-1.3">Astra 1.3</button>
+    <button class="launch-btn" data-client="astra-1.2">Astra 1.2</button>
+  </div>
+
+  <h3>Other Clients</h3>
+  <div class="button-group">
+    <button class="launch-btn" data-client="messcraft">MessCraft</button>
+    <button class="launch-btn" data-client="resent4.0">Resent 4.0</button>
+  </div>
+
+  <h3>Texture Packs</h3>
+  <div class="button-group">
+    <button class="download-btn" data-client="rubygigglepack">RubyGigglePack</button>
+    <button class="download-btn" data-client="overgrowngigglepack">OvergrownGigglePack</button>
+    <button class="download-btn" data-client="mysticgigglepack">MysticGigglePack</button>
+    <button class="download-btn" data-client="redgigglebluepack">RedGiggleBluePack</button>
+  </div>
+
+  <iframe id="client-frame" src="" frameborder="0" allowfullscreen></iframe>
+</div>
+<script src="js/launcher.js"></script>
+</body>
+</html>
